@@ -95,58 +95,65 @@ export default function HomePage() {
 
               {/* Schematic Viewport */}
               <div className="p-6 bg-slate-950 text-white relative">
-                <svg className="w-full h-36" viewBox="0 0 420 120" fill="none">
-                  {/* DC Voltage Source */}
-                  <circle cx="50" cy="60" r="22" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2" fill="#022c22" />
-                  <text x="50" y="65" textAnchor="middle" fill="#6ee7b7" fontSize="11" fontFamily="monospace" fontWeight="bold">5.0V</text>
+                <div className="w-full overflow-x-auto pb-2">
+                  <svg className="w-full min-w-[320px] h-28 sm:h-36" viewBox="0 0 420 120" fill="none">
+                    {/* DC Voltage Source */}
+                    <circle cx="50" cy="60" r="22" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2" fill="#022c22" />
+                    <text x="50" y="65" textAnchor="middle" fill="#6ee7b7" fontSize="11" fontFamily="monospace" fontWeight="bold">5.0V</text>
 
-                  {/* Wire to Switch */}
-                  <line x1="72" y1="60" x2="140" y2="60" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
+                    {/* Wire to Switch */}
+                    <line x1="72" y1="60" x2="140" y2="60" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
 
-                  {/* Knife Switch */}
-                  <circle cx="140" cy="60" r="4" fill={isPowered ? '#10b981' : '#64748b'} />
-                  <line x1="140" y1="60" x2="175" y2={isPowered ? '60' : '40'} stroke={isPowered ? '#10b981' : '#ef4444'} strokeWidth="3" />
-                  <circle cx="180" cy="60" r="4" fill={isPowered ? '#10b981' : '#64748b'} />
+                    {/* Knife Switch */}
+                    <circle cx="140" cy="60" r="4" fill={isPowered ? '#10b981' : '#64748b'} />
+                    <line x1="140" y1="60" x2="175" y2={isPowered ? '60' : '40'} stroke={isPowered ? '#10b981' : '#ef4444'} strokeWidth="3" />
+                    <circle cx="180" cy="60" r="4" fill={isPowered ? '#10b981' : '#64748b'} />
 
-                  {/* Wire to Resistor */}
-                  <line x1="184" y1="60" x2="240" y2="60" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
+                    {/* Wire to Resistor */}
+                    <line x1="184" y1="60" x2="240" y2="60" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
 
-                  {/* Resistor Component Zigzag */}
-                  <rect x="240" y="48" width="60" height="24" rx="4" fill="#1e293b" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2" />
-                  <text x="270" y="64" textAnchor="middle" fill="#e2e8f0" fontSize="10" fontFamily="monospace" fontWeight="bold">
-                    {resistance}&Omega;
-                  </text>
+                    {/* Resistor Component Zigzag */}
+                    <rect x="240" y="48" width="60" height="24" rx="4" fill="#1e293b" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2" />
+                    <text x="270" y="64" textAnchor="middle" fill="#e2e8f0" fontSize="10" fontFamily="monospace" fontWeight="bold">
+                      {resistance}&Omega;
+                    </text>
 
-                  {/* Wire to Ground/Return */}
-                  <line x1="300" y1="60" x2="370" y2="60" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
-                  <line x1="370" y1="60" x2="370" y2="100" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
-                  <line x1="370" y1="100" x2="50" y2="100" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
-                  <line x1="50" y1="100" x2="50" y2="82" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
-                </svg>
+                    {/* Wire to Ground/Return */}
+                    <line x1="300" y1="60" x2="370" y2="60" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
+                    <line x1="370" y1="60" x2="370" y2="100" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
+                    <line x1="370" y1="100" x2="50" y2="100" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
+                    <line x1="50" y1="100" x2="50" y2="82" stroke={isPowered ? '#10b981' : '#475569'} strokeWidth="2.5" strokeDasharray={isPowered ? '4 2' : 'none'} />
+                  </svg>
+                </div>
 
                 {/* Circuit Telemetry Bar */}
-                <div className="grid grid-cols-3 gap-3 pt-3 border-t border-slate-800">
-                  <div className="rounded-xl bg-slate-900 p-3">
-                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Supply</span>
-                    <span className="font-mono text-base font-bold text-emerald-400">5.00 V</span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-3 border-t border-slate-800">
+                  <div className="rounded-xl bg-slate-900 p-2.5 sm:p-3 flex sm:flex-col justify-between items-center sm:items-start">
+                    <span className="text-[10px] uppercase font-bold text-slate-400">Supply</span>
+                    <span className="font-mono text-sm sm:text-base font-bold text-emerald-400">5.00 V</span>
                   </div>
-                  <div className="rounded-xl bg-slate-900 p-3">
-                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Current Flow</span>
-                    <span className="font-mono text-base font-bold text-emerald-400">{current} mA</span>
+                  <div className="rounded-xl bg-slate-900 p-2.5 sm:p-3 flex sm:flex-col justify-between items-center sm:items-start">
+                    <span className="text-[10px] uppercase font-bold text-slate-400">Current Flow</span>
+                    <span className="font-mono text-sm sm:text-base font-bold text-emerald-400">{current} mA</span>
                   </div>
-                  <div className="rounded-xl bg-slate-900 p-3">
-                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Dissipation</span>
-                    <span className="font-mono text-base font-bold text-emerald-400">{power} mW</span>
+                  <div className="rounded-xl bg-slate-900 p-2.5 sm:p-3 flex sm:flex-col justify-between items-center sm:items-start">
+                    <span className="text-[10px] uppercase font-bold text-slate-400">Dissipation</span>
+                    <span className="font-mono text-sm sm:text-base font-bold text-emerald-400">{power} mW</span>
                   </div>
                 </div>
               </div>
 
               {/* Slider for Resistance */}
-              <div className="p-4 bg-slate-50 dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4">
-                <span className="text-xs font-bold text-slate-700 dark:text-slate-300 shrink-0 flex items-center gap-1.5">
-                  <Sliders className="w-3.5 h-3.5 text-emerald-500" />
-                  Load Resistance:
-                </span>
+              <div className="p-3.5 sm:p-4 bg-slate-50 dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-4">
+                <div className="flex items-center justify-between sm:justify-start gap-2">
+                  <span className="text-xs font-bold text-slate-700 dark:text-slate-300 shrink-0 flex items-center gap-1.5">
+                    <Sliders className="w-3.5 h-3.5 text-emerald-500" />
+                    Load Resistance:
+                  </span>
+                  <span className="sm:hidden font-mono text-xs font-bold text-slate-900 dark:text-white">
+                    {resistance} &Omega;
+                  </span>
+                </div>
                 <input
                   type="range"
                   min="50"
@@ -156,7 +163,7 @@ export default function HomePage() {
                   onChange={(e) => setResistance(Number(e.target.value))}
                   className="w-full accent-emerald-500"
                 />
-                <span className="font-mono text-xs font-bold text-slate-900 dark:text-white shrink-0">
+                <span className="hidden sm:inline font-mono text-xs font-bold text-slate-900 dark:text-white shrink-0">
                   {resistance} &Omega;
                 </span>
               </div>

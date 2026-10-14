@@ -151,7 +151,7 @@ export default function PowerLab() {
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2">
                 Grid Configuration
               </label>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {[
                   { id: 'single', label: '1-Phase AC' },
                   { id: 'three', label: '3-Phase AC' },
@@ -253,12 +253,12 @@ export default function PowerLab() {
             ) : (
               <div className="space-y-4">
                 {/* 4 Cards */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="rounded-2xl border border-purple-500/30 bg-purple-50/40 p-4 dark:border-purple-500/20 dark:bg-purple-950/20">
                     <span className="text-[10px] uppercase font-bold text-purple-700 dark:text-purple-400 tracking-wider block mb-1">
                       Real Active Power (P)
                     </span>
-                    <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                       {formatNum(result.realPowerW)} <span className="text-sm font-normal text-slate-500">W</span>
                     </div>
                     <span className="text-[11px] text-purple-600 dark:text-purple-400 font-mono">
@@ -270,7 +270,7 @@ export default function PowerLab() {
                     <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                       Apparent Power (S)
                     </span>
-                    <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                       {formatNum(result.apparentPowerVA)} <span className="text-sm font-normal text-slate-500">VA</span>
                     </div>
                     <span className="text-[11px] text-slate-500 font-mono">
@@ -282,7 +282,7 @@ export default function PowerLab() {
                     <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                       Reactive Power (Q)
                     </span>
-                    <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                       {formatNum(result.reactivePowerVar)} <span className="text-sm font-normal text-slate-500">var</span>
                     </div>
                     <span className="text-[11px] text-slate-500 font-mono">
@@ -294,7 +294,7 @@ export default function PowerLab() {
                     <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                       Mechanical Output
                     </span>
-                    <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                       {formatNum(result.outputPowerW || 0)} <span className="text-sm font-normal text-slate-500">W</span>
                     </div>
                     <span className="text-[11px] text-slate-500 font-mono">

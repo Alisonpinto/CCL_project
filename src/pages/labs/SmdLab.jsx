@@ -131,29 +131,29 @@ export default function SmdLab() {
             <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6">Chip Code Entry</h3>
 
             {/* SMD Tactile Chip Preview */}
-            <div className="rounded-2xl border border-slate-200 bg-slate-100/80 p-8 text-center dark:border-slate-800 dark:bg-slate-950/60 mb-6">
-              <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400 mb-4">
+            <div className="rounded-2xl border border-slate-200 bg-slate-100/80 p-4 sm:p-8 text-center dark:border-slate-800 dark:bg-slate-950/60 mb-6 overflow-hidden">
+              <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-slate-400 mb-3 sm:mb-4">
                 SMD Package Footprint Visual (e.g. 1206 / 0805)
               </div>
               
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center overflow-x-auto py-2">
                 {/* SMD Resistor Body */}
-                <div className="relative flex h-28 w-64 items-center justify-center rounded-xl border-4 border-slate-700 bg-slate-900 shadow-2xl">
+                <div className="relative flex h-24 sm:h-28 w-56 sm:w-64 shrink-0 items-center justify-center rounded-xl border-2 sm:border-4 border-slate-700 bg-slate-900 shadow-2xl">
                   {/* Left solder termination */}
-                  <div className="absolute left-0 top-0 bottom-0 w-8 rounded-l-md bg-linear-to-r from-slate-300 to-slate-400 border-r-2 border-slate-600 shadow-inner" />
+                  <div className="absolute left-0 top-0 bottom-0 w-6 sm:w-8 rounded-l-md bg-linear-to-r from-slate-300 to-slate-400 border-r-2 border-slate-600 shadow-inner" />
                   
                   {/* Stamped Code on Ceramic Body */}
-                  <div className="px-10 text-center z-10">
-                    <span className="font-mono text-3xl sm:text-4xl font-black tracking-widest text-white drop-shadow-md">
+                  <div className="px-6 sm:px-10 text-center z-10">
+                    <span className="font-mono text-2xl sm:text-4xl font-black tracking-widest text-white drop-shadow-md">
                       {value ? value.toUpperCase() : '---'}
                     </span>
-                    <div className="text-[9px] uppercase tracking-widest text-slate-400 mt-1">
+                    <div className="text-[8px] sm:text-[9px] uppercase tracking-widest text-slate-400 mt-0.5 sm:mt-1">
                       SMD Marking
                     </div>
                   </div>
 
                   {/* Right solder termination */}
-                  <div className="absolute right-0 top-0 bottom-0 w-8 rounded-r-md bg-linear-to-l from-slate-300 to-slate-400 border-l-2 border-slate-600 shadow-inner" />
+                  <div className="absolute right-0 top-0 bottom-0 w-6 sm:w-8 rounded-r-md bg-linear-to-l from-slate-300 to-slate-400 border-l-2 border-slate-600 shadow-inner" />
                 </div>
               </div>
             </div>

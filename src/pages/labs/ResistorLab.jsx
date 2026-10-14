@@ -166,18 +166,18 @@ export default function ResistorLab() {
             </div>
 
             {/* Tactile Resistor Visual Representation */}
-            <div className="rounded-2xl border border-slate-200 bg-slate-100/80 p-8 text-center dark:border-slate-800 dark:bg-slate-950/60 mb-8">
-              <div className="text-[11px] font-mono uppercase tracking-widest text-slate-400 mb-4">
+            <div className="rounded-2xl border border-slate-200 bg-slate-100/80 p-4 sm:p-8 text-center dark:border-slate-800 dark:bg-slate-950/60 mb-6 sm:mb-8 overflow-hidden">
+              <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-slate-400 mb-3 sm:mb-4">
                 Interactive Resistor Schematic
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center overflow-x-auto py-2">
                 {/* Left Lead */}
-                <div className="h-2 w-12 sm:w-20 bg-linear-to-b from-slate-300 to-slate-400 dark:from-slate-600 dark:to-slate-700 rounded-l-full shadow-inner" />
+                <div className="h-1.5 sm:h-2 w-6 sm:w-16 md:w-20 bg-linear-to-b from-slate-300 to-slate-400 dark:from-slate-600 dark:to-slate-700 rounded-l-full shadow-inner shrink-0" />
                 
                 {/* Resistor Body */}
-                <div className="relative flex h-24 w-72 sm:w-96 items-stretch justify-between overflow-hidden rounded-3xl border-2 border-amber-900/20 bg-linear-to-b from-[#e8d5b5] via-[#dfc8a2] to-[#c9ad84] px-4 shadow-xl dark:border-slate-700 dark:from-[#d1b892] dark:via-[#c5aa81] dark:to-[#ab8e66]">
+                <div className="relative flex h-20 sm:h-24 w-60 sm:w-80 md:w-96 shrink-0 items-stretch justify-between overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-amber-900/20 bg-linear-to-b from-[#e8d5b5] via-[#dfc8a2] to-[#c9ad84] px-2.5 sm:px-4 shadow-xl dark:border-slate-700 dark:from-[#d1b892] dark:via-[#c5aa81] dark:to-[#ab8e66]">
                   {/* Subtle 3D shine overlay */}
-                  <div className="absolute inset-x-0 top-0 h-4 bg-white/30 rounded-t-3xl pointer-events-none" />
+                  <div className="absolute inset-x-0 top-0 h-3 sm:h-4 bg-white/30 rounded-t-2xl sm:rounded-t-3xl pointer-events-none" />
 
                   {Array.from({ length: Number(bandMode) }).map((_, index) => {
                     const colorKey = colours[index];
@@ -186,12 +186,12 @@ export default function ResistorLab() {
                     return (
                       <div
                         key={`resistor-band-${index}`}
-                        className={`relative w-7 sm:w-9 h-full flex flex-col justify-end items-center pb-2 transition-all shadow-md ${
+                        className={`relative w-6 sm:w-8 md:w-9 h-full flex flex-col justify-end items-center pb-1.5 sm:pb-2 transition-all shadow-md ${
                           isTolerance ? 'ml-auto' : ''
                         }`}
                         style={{ backgroundColor: colorData.tone || colorKey }}
                       >
-                        <span className="rounded-sm bg-slate-950/80 px-1 py-0.5 text-[9px] font-mono font-bold text-white shadow-xs">
+                        <span className="rounded-sm bg-slate-950/80 px-1 py-0.5 text-[8px] sm:text-[9px] font-mono font-bold text-white shadow-xs">
                           {index + 1}
                         </span>
                       </div>
@@ -200,11 +200,11 @@ export default function ResistorLab() {
                 </div>
 
                 {/* Right Lead */}
-                <div className="h-2 w-12 sm:w-20 bg-linear-to-b from-slate-300 to-slate-400 dark:from-slate-600 dark:to-slate-700 rounded-r-full shadow-inner" />
+                <div className="h-1.5 sm:h-2 w-6 sm:w-16 md:w-20 bg-linear-to-b from-slate-300 to-slate-400 dark:from-slate-600 dark:to-slate-700 rounded-r-full shadow-inner shrink-0" />
               </div>
 
-              <div className="mt-4 flex justify-center gap-6 text-[11px] text-slate-500 dark:text-slate-400">
-                <span>Bands 1-{Number(bandMode) - 2}: Significant Digits</span>
+              <div className="mt-3 sm:mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">
+                <span>Bands 1-{Number(bandMode) - 2}: Digits</span>
                 <span>Band {Number(bandMode) - 1}: Multiplier</span>
                 <span>Band {bandMode}: Tolerance</span>
               </div>

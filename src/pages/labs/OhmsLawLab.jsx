@@ -267,13 +267,13 @@ export default function OhmsLawLab() {
             ) : (
               <div className="space-y-4">
                 {/* 4 Cards Grid */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {/* Voltage Card */}
                   <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
                     <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                       Voltage (V)
                     </span>
-                    <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                       {formatNum(result.voltageV)} <span className="text-sm font-normal text-slate-500">V</span>
                     </div>
                   </div>
@@ -283,7 +283,7 @@ export default function OhmsLawLab() {
                     <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                       Current (I)
                     </span>
-                    <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                       {formatNum(result.currentA)} <span className="text-sm font-normal text-slate-500">A</span>
                     </div>
                   </div>
@@ -293,7 +293,7 @@ export default function OhmsLawLab() {
                     <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                       Resistance (R)
                     </span>
-                    <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                    <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                       {formatNum(result.resistanceOhms)} <span className="text-sm font-normal text-slate-500">&Omega;</span>
                     </div>
                   </div>
@@ -303,7 +303,7 @@ export default function OhmsLawLab() {
                     <span className="text-[10px] uppercase font-bold text-emerald-600 tracking-wider block mb-1">
                       Dissipated Power (P)
                     </span>
-                    <div className="text-2xl font-black text-emerald-700 dark:text-emerald-400 font-mono">
+                    <div className="text-xl sm:text-2xl font-black text-emerald-700 dark:text-emerald-400 font-mono">
                       {formatNum(result.powerW)} <span className="text-sm font-normal text-emerald-600">W</span>
                     </div>
                   </div>

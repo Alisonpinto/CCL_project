@@ -184,30 +184,30 @@ export default function SolarBatteryLab() {
       </div>
 
       {/* Mode Selector */}
-      <div className="flex rounded-2xl border border-slate-200 bg-slate-100 p-1.5 dark:border-slate-800 dark:bg-slate-900">
+      <div className="flex flex-col sm:flex-row rounded-2xl border border-slate-200 bg-slate-100 p-1.5 dark:border-slate-800 dark:bg-slate-900 gap-1 sm:gap-0">
         <button
           type="button"
           onClick={() => setMode('battery')}
-          className={`flex-1 inline-flex items-center justify-center gap-2 rounded-xl py-3 text-xs sm:text-sm font-bold transition-all ${
+          className={`flex-1 inline-flex items-center justify-center gap-2 rounded-xl py-2.5 sm:py-3 text-xs sm:text-sm font-bold transition-all ${
             mode === 'battery'
               ? 'bg-white text-emerald-600 shadow-sm dark:bg-slate-800 dark:text-emerald-400'
               : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
           }`}
         >
           <BatteryCharging className="w-4 h-4" />
-          <span>Battery Storage Runtime Model</span>
+          <span>Battery Storage Runtime</span>
         </button>
         <button
           type="button"
           onClick={() => setMode('solar')}
-          className={`flex-1 inline-flex items-center justify-center gap-2 rounded-xl py-3 text-xs sm:text-sm font-bold transition-all ${
+          className={`flex-1 inline-flex items-center justify-center gap-2 rounded-xl py-2.5 sm:py-3 text-xs sm:text-sm font-bold transition-all ${
             mode === 'solar'
               ? 'bg-white text-amber-600 shadow-sm dark:bg-slate-800 dark:text-amber-400'
               : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
           }`}
         >
           <Sun className="w-4 h-4" />
-          <span>Solar PV Array Sizing Model</span>
+          <span>Solar PV Array Sizing</span>
         </button>
       </div>
 
@@ -321,7 +321,7 @@ export default function SolarBatteryLab() {
                   </div>
 
                   {/* Energy Breakdown */}
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
                       <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                         Nominal Bank Capacity
@@ -443,12 +443,12 @@ export default function SolarBatteryLab() {
                   </div>
 
                   {/* Modules & Generation */}
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
                       <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                         Recommended Panel Count
                       </span>
-                      <div className="text-2xl font-black text-slate-900 dark:text-white font-mono">
+                      <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                         {solarResult.panelCount ?? '—'} <span className="text-xs font-normal text-slate-500">Panels</span>
                       </div>
                       <span className="text-[11px] text-slate-500">at {solarData.panelRatingW}W per module</span>
@@ -458,7 +458,7 @@ export default function SolarBatteryLab() {
                       <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                         Estimated Daily Harvest
                       </span>
-                      <div className="text-xl font-black text-slate-900 dark:text-white font-mono">
+                      <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-mono">
                         {formatNum(solarResult.estimatedDailyGenerationWh)} Wh
                       </div>
                       <span className="text-[11px] text-slate-500">at {solarData.peakSunHours} PSH</span>

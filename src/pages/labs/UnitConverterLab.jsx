@@ -153,7 +153,7 @@ export default function UnitConverterLab() {
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2">
                 Conversion Domain
               </label>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {[
                   { id: 'electrical', label: 'Electrical Units' },
                   { id: 'length', label: 'Lengths & Pitch' },
@@ -189,8 +189,8 @@ export default function UnitConverterLab() {
                 />
               </div>
 
-              <div className="grid grid-cols-[1fr_auto_1fr] items-end gap-2">
-                <div>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-end gap-2.5">
+                <div className="flex-1">
                   <label className="block text-xs font-bold text-slate-900 dark:text-white mb-1.5">
                     From Unit
                   </label>
@@ -205,16 +205,18 @@ export default function UnitConverterLab() {
                   </select>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={handleSwap}
-                  className="mb-1 p-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-cyan-50 hover:text-cyan-600 hover:border-cyan-400 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300 transition-colors"
-                  title="Swap From and To units"
-                >
-                  <ArrowLeftRight className="w-4 h-4" />
-                </button>
+                <div className="flex justify-center">
+                  <button
+                    type="button"
+                    onClick={handleSwap}
+                    className="p-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-cyan-50 hover:text-cyan-600 hover:border-cyan-400 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300 transition-colors"
+                    title="Swap From and To units"
+                  >
+                    <ArrowLeftRight className="w-4 h-4" />
+                  </button>
+                </div>
 
-                <div>
+                <div className="flex-1">
                   <label className="block text-xs font-bold text-slate-900 dark:text-white mb-1.5">
                     To Target Unit
                   </label>

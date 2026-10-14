@@ -288,7 +288,7 @@ export default function WireCableLab() {
                 </div>
 
                 {/* Voltage Drop Metrics */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
                     <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                       Max Permitted Drop (V)

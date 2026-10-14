@@ -185,19 +185,19 @@ export default function SafetyLab() {
         </div>
 
         {/* Progress Tracker */}
-        <div className="rounded-2xl border border-slate-100 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/60 flex items-center justify-between gap-4">
+        <div className="rounded-2xl border border-slate-100 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/60 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
           <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
-            <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-            <span>Interactive Safety Checklist Progress</span>
+            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>Safety Checklist Progress</span>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-32 sm:w-48 h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+          <div className="flex items-center justify-between sm:justify-end gap-3">
+            <div className="flex-1 sm:w-40 md:w-48 h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
               <div
                 className="h-full bg-emerald-500 transition-all duration-300"
                 style={{ width: `${ackPercentage}%` }}
               />
             </div>
-            <span className="text-xs font-mono font-bold text-slate-600 dark:text-slate-400">
+            <span className="text-xs font-mono font-bold text-slate-600 dark:text-slate-400 shrink-0">
               {ackCount}/{totalItems} ({ackPercentage}%)
             </span>
           </div>
