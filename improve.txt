@@ -1,0 +1,27 @@
+Inspect our current React + Vite + Tailwind CSS repository and apply the following targeted upgrades while preserving our existing white + emerald-green UI theme and working code:
+
+1. FIX MISSING / BROKEN SVG VISUALS IN ALL CALCULATORS:
+   - Tool 1 (Resistor Calculator): Fix the empty gray container above Band 1 & Band 2. Render an interactive inline <svg> axial resistor with metallic leads, ceramic body, and 4 or 5 colored vertical bands whose fill colors dynamically match the selected bands (including metallic gold/silver gradients). Also show color swatch dots next to band options.
+   - Tool 2 (SMD Decoder): Render an inline <svg> black rectangular SMD resistor package with silver end-terminals that displays the typed SMD code (e.g., "472", "4R7") live in white text on the chip surface.
+   - Tool 3 (Ohm's Law): Render an inline <svg> interactive DC circuit schematic (voltage source, resistor, ammeter, and animated current flow dots) showing the live V, I, R, and P values on the schematic.
+   - Tool 4 (Wire & Cable): Render an inline <svg> circular conductor cross-section that dynamically scales its core diameter with the selected AWG size, plus a visual Voltage Drop % progress bar (Green <= 3%, Red > 3%).
+   - Tool 5 (Power Calculator): Render an inline <svg> dynamic Power Triangle vector diagram plotting P (W), Q (var), and S (VA) and phase angle θ as Power Factor changes.
+   - Tool 7 (Solar & Battery): Render an inline <svg> Battery State-of-Charge / DoD gauge and Solar Panel array graphic that updates with the calculated backup hours and panel wattage.
+
+2. MAKE THE HERO "LIVE CIRCUIT" CARD INTERACTIVE:
+   - In the hero section, make the dark "LIVE CIRCUIT" preview card interactive (allow toggling sample circuits or reflecting the latest calculation) instead of static hardcoded text.
+
+3. ADD OBSERVATION REPORT TABLE + EXCEL (.CSV) & PDF EXPORT:
+   - Add three action buttons to every calculator card (Tools 1–7): `[Log to Report]`, `[Copy Result]`, and `[Reset]`.
+   - Create an "Observation Report Sheet" section (and navbar link) displaying an Excel-style table of all logged calculations (`Sr. No.`, `Timestamp`, `Tool`, `Input Parameters`, `Calculated Output`, `Formula`, `Delete`).
+   - Add `[Export Excel (.CSV)]` (downloads a properly escaped UTF-8 `.csv` file locally via Blob) and `[Export PDF Report]` (triggers `window.print()` with `@media print` CSS that hides navigation/inputs and prints a clean formal lab report table).
+
+4. STRICT ACCURACY & VALIDATION CHECK:
+   - Verify all 8 tools strictly match the problem statement and pass all unit tests (Brown-Black-Red-Gold = 1 kΩ ±5%, SMD 472 = 4.7 kΩ, SMD 1002 = 10 kΩ, 12V & 6Ω = 2A & 24W, AWG 12 = 3.31 mm², 1Φ 230V*10A*0.8 = 1840W, 3Φ 400V*10A*0.8 = 5542.56W, 1 kWh = 3.6 MJ, 12V*100Ah*0.8*0.9 / 100W = 8.64h, 2000Wh / (5*0.8) = 500W).
+   - Ensure zero external network dependencies so the app runs 100% offline.
+   - Run `npm test` and `npm run build` to verify zero errors.
+
+
+
+
+

@@ -3,10 +3,7 @@ import {
   CircuitBoard,
   Calculator,
   BookOpen,
-  ArrowRight,
-  Zap,
-  Activity,
-  Check
+  Zap
 } from 'lucide-react';
 
 export default function FeaturesSection() {

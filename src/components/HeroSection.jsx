@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import {
   Zap,
   Sliders,
-  Play,
-  RotateCcw,
   Activity,
-  BatteryCharging,
   ArrowRight,
   Power
 } from 'lucide-react';
