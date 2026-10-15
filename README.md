@@ -1,4 +1,4 @@
-# ⚡ LabSim — Interactive Engineering Lab
+# CCL_project — ⚡ LabSim Interactive Engineering Lab
 
 <p align="center">
   <strong>Explore. Simulate. Calculate. Learn.</strong>
